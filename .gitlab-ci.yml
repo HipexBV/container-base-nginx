@@ -1,0 +1,15 @@
+services:
+- docker:19.03.8-dind
+image: git-registry.emico.nl/hipex-services/docker-image-build
+
+stages:
+- build
+- test
+
+build:
+    stage: build
+    script:
+    - build.sh  .
+    only:
+    - tags
+    - master
