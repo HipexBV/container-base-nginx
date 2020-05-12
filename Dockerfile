@@ -10,7 +10,8 @@ USER root
 # Install runtime tools
 RUN apk --update --no-cache add --virtual .runtime-deps \
     bash \
-    gettext
+    gettext \
+    rsync
 
 # Update nginx user id
 RUN apk --update --no-cache add --virtual .build-deps shadow \
