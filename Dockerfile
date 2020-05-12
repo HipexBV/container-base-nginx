@@ -25,6 +25,6 @@ RUN mkdir /app \
     && chown 5000:5000 /app
 
 USER nginx
-
+WORKDIR /app
 ENTRYPOINT ["hipex-entry-point.sh"]
 CMD ["nginx", "-g", "daemon off;"]
