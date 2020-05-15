@@ -1,6 +1,8 @@
 FROM nginxinc/nginx-unprivileged:stable-alpine
 LABEL maintainer="Hipex.io <info@hipex.io>"
 
+ENV PHP_BACKEND="localhost"
+
 # Copy config files
 COPY files/. /
 
