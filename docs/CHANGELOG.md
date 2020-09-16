@@ -1,3 +1,11 @@
+# [1.0.0-alpha.2](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2020-09-16)
+
+
+### Bug Fixes
+
+* deploy step ([2f183e9](https://git.emico.nl/hipex-services/docker-image-nginx/commit/2f183e9dc4d8e33c98cc73adba194fec64f82153))
+* docker extends ([bba1b9b](https://git.emico.nl/hipex-services/docker-image-nginx/commit/bba1b9bda1f3f0b6a522205a168f903417f2c8f6))
+
 # 1.0.0-alpha.1 (2020-09-16)
 
 
