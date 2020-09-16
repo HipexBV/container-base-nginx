@@ -61,7 +61,7 @@ release:
     script:
     - semantic-release
 
-# Publish tag
+# Publish tag.
 publish:
     stage: publish
     extends:
