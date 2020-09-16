@@ -18,6 +18,14 @@ stages:
     - tags
     - merge_requests
 
+.docker:
+    image: docker:latest
+    services:
+    - docker:19.03.8-dind
+    before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $DOCKER_REGISTRY
+    - docker pull "${CI_REGISTRY_IMAGE}:cache" || true
+
 # Code quality step
 quality:dockerfile:
     extends: .default
@@ -31,12 +39,8 @@ build:
     stage: build
     extends:
     - .default
-    image: docker:latest
-    services:
-    - docker:19.03.8-dind
+    - .docker
     script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $DOCKER_REGISTRY
-    - docker pull "${CI_REGISTRY_IMAGE}:cache" || true
     - |
         docker build \
             --cache-from "${DOCKER_IMAGE}:cache" \
@@ -56,3 +60,15 @@ release:
     - master
     script:
     - semantic-release
+
+# Publish tag
+publish:
+    stage: publish
+    extends:
+    - .docker
+    only:
+    - tags
+    script:
+    - docker pull "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+    - docker tag "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}" "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+    - docker push "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
