@@ -64,6 +64,8 @@ release:
 # Publish tag
 publish:
     stage: publish
+    extends:
+    - .docker
     only:
     - tags
     script:
