@@ -22,11 +22,11 @@ RUN apk --update --no-cache add --virtual .build-deps shadow \
     && apk del .build-deps
 
 # Giver permissions to app config environment
-RUN chown 5000:5000 /etc/nginx/app
+RUN chown -Rf 5000:5000 /etc/nginx
 
 # Prepare environment
 RUN mkdir /app \
-    && chown 5000:5000 /app
+    && chown -Rf 5000:5000 /app
 
 USER nginx
 WORKDIR /app

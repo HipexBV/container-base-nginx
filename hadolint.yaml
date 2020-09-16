@@ -1,0 +1,9 @@
+trustedRegistries:
+- docker.io
+- git-registry.emico.nl
+- registry.hipex.cloud
+
+ignored:
+- DL4006
+- DL3018
+- DL3002

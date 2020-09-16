@@ -1,15 +1,58 @@
-services:
-- docker:19.03.8-dind
-image: git-registry.emico.nl/hipex-services/docker-image-build
+variables:
+    DOCKER_REGISTRY: git-registry.emico.nl
+    DOCKER_IMAGE: $DOCKER_REGISTRY/$CI_PROJECT_PATH
+    DOCKER_DRIVER: overlay2
+    DOCKER_BUILDKIT: 1
+    DOCKER_CLI_EXPERIMENTAL: enabled
 
 stages:
+- quality
 - build
 - test
+- release
+- publish
 
-build:
-    stage: build
-    script:
-    - build.sh  .
+# General extends
+.default:
     only:
     - tags
+    - merge_requests
+
+# Code quality step
+quality:dockerfile:
+    extends: .default
+    stage: quality
+    image: hadolint/hadolint:latest-debian
+    script:
+    - hadolint --config=hadolint.yaml Dockerfile
+
+# Build docker image
+build:
+    stage: build
+    extends:
+    - .default
+    image: docker:latest
+    services:
+    - docker:19.03.8-dind
+    script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $DOCKER_REGISTRY
+    - docker pull "${CI_REGISTRY_IMAGE}:cache" || true
+    - |
+        docker build \
+            --cache-from "${DOCKER_IMAGE}:cache" \
+            --tag "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}" \
+            --tag "${DOCKER_IMAGE}:cache" \
+            .
+    - docker push "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+    - docker push "${DOCKER_IMAGE}:cache"
+
+# Release tag
+release:
+    stage: release
+    image: registry.hipex.cloud/hipex-services/release-cl
+    only:
+    - alpha
+    - beta
     - master
+    script:
+    - semantic-release
