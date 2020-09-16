@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2020-09-16)
+
+
+### Bug Fixes
+
+* tag push ([2de856b](https://git.emico.nl/hipex-services/docker-image-nginx/commit/2de856bdbd360e9c78ac5efa0aab37302c16831f))
+
 # [1.0.0-alpha.2](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2020-09-16)
 
 
