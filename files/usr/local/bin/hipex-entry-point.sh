@@ -10,8 +10,8 @@ function envreplace() {
 }
 
 export -f envreplace
-find /app -name \*.hipextemplate -exec bash -c 'envreplace "$0"' {} \;
-find /etc/nginx -name \*.hipextemplate -exec bash -c 'envreplace "$0"' {} \;
+find /app -xdev -name \*.hipextemplate -exec bash -c 'envreplace "$0"' {} \;
+find /etc/nginx -xdev -name \*.hipextemplate -exec bash -c 'envreplace "$0"' {} \;
 
 echo "Finished env replace, continue startup"
 
