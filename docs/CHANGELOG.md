@@ -1,3 +1,11 @@
+# [1.0.0-alpha.5](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-11-10)
+
+
+### Bug Fixes
+
+* Now only scans same file system for `.hipextemplate` config files ([dedd28e](https://git.emico.nl/hipex-services/docker-image-nginx/commit/dedd28e04bf009d2a7cde310d47e39f489dbdf1d))
+* Now pushes latest release under the `latest` tag ([f7503bf](https://git.emico.nl/hipex-services/docker-image-nginx/commit/f7503bf49107ab3cfcc88740391d2dfb2ebe1833))
+
 # [1.0.0-alpha.4](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2020-09-16)
 
 
