@@ -1,3 +1,10 @@
+## [1.0.1-alpha.2](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2020-11-19)
+
+
+### Bug Fixes
+
+* Now includes the `/etc/nginx/bots.d/blockbots.conf` and `/etc/nginx/bots.d/ddos.conf` nginx files to match Hipex Dedicated environment ([ecd4a38](https://git.emico.nl/hipex-services/docker-image-nginx/commit/ecd4a387a926a5f67a3075bf2178324bb6e1251b))
+
 ## [1.0.1-alpha.1](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.0...v1.0.1-alpha.1) (2020-11-10)
 
 
