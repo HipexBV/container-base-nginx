@@ -1,5 +1,14 @@
 location ~ \.php$ {
+    echo_exec @php;
+}
+
+location @php {
     fastcgi_pass   ${PHP_BACKEND}:9000;
     fastcgi_index  index.php;
     include        fastcgi_params.conf;
 }
+
+location @main { echo_exec @php; }
+location @hhvm { echo_exec @php; }
+location @alternative { echo_exec @php; }
+location @fastcgi_backend { echo_exec @php; }
