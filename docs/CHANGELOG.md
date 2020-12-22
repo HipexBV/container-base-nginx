@@ -1,3 +1,12 @@
+# [1.1.0-alpha.1](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.1-alpha.2...v1.1.0-alpha.1) (2020-12-22)
+
+
+### Features
+
+* Added nginx echo module version 0.62 support ([32072ec](https://git.emico.nl/hipex-services/docker-image-nginx/commit/32072ec0154dcb542564b1db84c293d3088b7dab))
+* Added nginx geoip module ([870dc49](https://git.emico.nl/hipex-services/docker-image-nginx/commit/870dc49e5ecb5c202e8b7f75349470fbebeece41))
+* Added test step into ci/cd ([02f7a3b](https://git.emico.nl/hipex-services/docker-image-nginx/commit/02f7a3baf3a236614efc6d1a5f283fdccec4a9c0))
+
 ## [1.0.1-alpha.2](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2020-11-19)
 
 
