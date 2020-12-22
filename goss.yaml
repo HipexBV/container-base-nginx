@@ -1,0 +1,11 @@
+command:
+    nginx -V:
+        exit-status: 0
+        stdout:
+            - nginx/{{getEnv "NGINX_VERSION"}}
+        stderr: []
+        timeout: 0
+
+port:
+    tcp:8080:
+        listening: true

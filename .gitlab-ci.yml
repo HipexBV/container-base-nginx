@@ -50,6 +50,16 @@ build:
     - docker push "${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
     - docker push "${DOCKER_IMAGE}:cache"
 
+# Test
+test:
+    stage: test
+    extends:
+    - .default
+    image: "kiwicom/dgoss"
+    script:
+    - "docker pull ${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+    - "dgoss run ${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+
 # Release tag
 release:
     stage: release
