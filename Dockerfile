@@ -19,6 +19,9 @@ RUN apk add --no-cache --virtual .build-deps \
     alpine-sdk \
     findutils
 
+# Install goss testing
+RUN curl -fsSL https://goss.rocks/install | sh
+
 # Set version
 ENV NGINX_MODULE_ECHO_VERSION=0.62
 
@@ -48,6 +51,7 @@ ENV PHP_BACKEND="localhost"
 
 # Copy build files
 COPY --from=build "/usr/src/nginx-${NGINX_VERSION}/objs/ngx_http_echo_module.so" /usr/local/nginx/modules/ngx_echo_module.so
+COPY --from=build /usr/local/bin/goss /usr/local/bin/goss
 
 # Copy config files
 COPY files/. /
