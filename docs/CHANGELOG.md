@@ -1,3 +1,11 @@
+# [1.1.0-alpha.2](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.1...v1.1.0-alpha.2) (2021-01-11)
+
+
+### Bug Fixes
+
+* added `ssl_session_cache`, `ssl_session_timeout`, `ssl_buffer_size` and `ssl_session_tickets` settings to match platform configuration ([70d623c](https://git.emico.nl/hipex-services/docker-image-nginx/commit/70d623c1c0f91d6810253e8b3475c096fdc332e5))
+* Added the `map_hash_bucket_size`, `server_names_hash_bucket_size`, `server_names_hash_max_size` and `variables_hash_max_size` buffer to match platform configuration ([c805dbd](https://git.emico.nl/hipex-services/docker-image-nginx/commit/c805dbd85b5a113c996710b25a3dadb86d0caed7))
+
 # [1.1.0-alpha.1](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.0.1-alpha.2...v1.1.0-alpha.1) (2020-12-22)
 
 
