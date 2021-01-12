@@ -1,3 +1,10 @@
+# [1.1.0-alpha.3](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2021-01-12)
+
+
+### Features
+
+* Now scans `/etc/nginx/app/` directory on startup for domain folders and creates domain config with `/etc/nginx/app/${DOMAIN}/*.nginx.conf` nginx include ([4d8e944](https://git.emico.nl/hipex-services/docker-image-nginx/commit/4d8e944b077fc9d4347ac0fe8d0a1f43ac507f8a))
+
 # [1.1.0-alpha.2](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.1...v1.1.0-alpha.2) (2021-01-11)
 
 
