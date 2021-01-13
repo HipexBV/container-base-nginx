@@ -1,3 +1,10 @@
+# [1.1.0-alpha.5](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2021-01-13)
+
+
+### Bug Fixes
+
+* Default nginx `localhost` server block now replaced by empty file ([1c2cc70](https://git.emico.nl/hipex-services/docker-image-nginx/commit/1c2cc7042760009cc86283aa705c3c46c43ba816))
+
 # [1.1.0-alpha.4](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2021-01-13)
 
 
