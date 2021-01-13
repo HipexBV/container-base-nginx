@@ -1,3 +1,10 @@
+# [1.1.0-alpha.4](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2021-01-13)
+
+
+### Bug Fixes
+
+* Moved including of base configurations above the application scope config. So they can be overwritten and settings like `map_hash_bucket_size` get set before the app defines there map configs. ([1fba97a](https://git.emico.nl/hipex-services/docker-image-nginx/commit/1fba97ac3db7f884adff3b20dd2012defe897b78))
+
 # [1.1.0-alpha.3](https://git.emico.nl/hipex-services/docker-image-nginx/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2021-01-12)
 
 
