@@ -70,6 +70,7 @@ FROM nginxinc/nginx-unprivileged:stable-alpine
 LABEL maintainer="Hipex.io <info@hipex.io>"
 
 ENV PHP_BACKEND="localhost"
+ENV DYNAMIC_REALIP_TARGETS="https://www.cloudflare.com/ips-v4;https://www.cloudflare.com/ips-v6"
 
 # Setup root
 USER root
