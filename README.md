@@ -13,3 +13,13 @@ FROM ghcr.io/hipexbv/container-base-nginx:v1.0.0
 # Copy app code
 COPY / /app
 ```
+
+
+### Env replace
+On start environment variables inside files with the `.hipextemplate` extension are replaced and moved without the extension.
+Replacement is done using [envsubst](https://man7.org/linux/man-pages/man1/envsubst.1.html) command.
+
+
+### PHP upstream
+PHP requests will be send to the PHP upstream `PHP_BACKEND` using port 9000. Compatible with the
+[Hipex PHP](https://github.com/HipexBV/container-base-php) images.

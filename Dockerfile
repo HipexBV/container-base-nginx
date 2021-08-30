@@ -68,6 +68,7 @@ RUN mkdir /usr/share/GeoIP && /usr/bin/entry.sh
 ###
 FROM nginxinc/nginx-unprivileged:stable-alpine
 LABEL maintainer="Hipex.io <info@hipex.io>"
+LABEL org.opencontainers.image.source=https://github.com/HipexBV/container-base-nginx
 
 ENV PHP_BACKEND="localhost"
 
